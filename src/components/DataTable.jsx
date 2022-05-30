@@ -2,32 +2,43 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.min.css';
 import '../index.css';
 import { Table, Button, Space } from 'antd';
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
-  },
-];
+// const data = [
+//   {
+//     key: '1',
+//     name: 'John Brown',
+//     age: 32,
+//     address: 'New York No. 1 Lake Park',
+//   },
+//   {
+//     key: '2',
+//     name: 'Jim Green',
+//     age: 42,
+//     address: 'London No. 1 Lake Park',
+//   },
+//   {
+//     key: '3',
+//     name: 'Joe Black',
+//     age: 32,
+//     address: 'Sidney No. 1 Lake Park',
+//   },
+//   {
+//     key: '4',
+//     name: 'Jim Red',
+//     age: 32,
+//     address: 'London No. 2 Lake Park',
+//   },
+// ];
+
+// Temporary for loop for data table
+const data = [];
+for (let i = 0; i < 10000; i++) {
+    data.push({
+        key: i.toString(),
+        name: `Edrward ${i}`,
+        age: 32,
+        address: `London Park no. ${i}`,
+    })
+};
 
 const DataTable = () => {
   const [filteredInfo, setFilteredInfo] = useState({});
@@ -116,7 +127,7 @@ const DataTable = () => {
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>
       </Space>
-      <Table columns={columns} dataSource={data} onChange={handleChange} />
+      <Table columns={columns} dataSource={data} scroll={{ y: 240 }} onChange={handleChange} />
     </>
   );
 };
