@@ -35,7 +35,7 @@ for (let i = 0; i < 10000; i++) {
     data.push({
         key: i.toString(),
         name: `Edrward ${i}`,
-        age: 32,
+        age: 33,
         address: `London Park no. ${i}`,
     })
 };
