@@ -82,6 +82,7 @@ const DataTable = () => {
         },
       ],
       filteredValue: filteredInfo.name || null,
+      filterSearch: true,
       onFilter: (value, record) => record.name.includes(value),
       sorter: (a, b) => a.name.length - b.name.length,
       sortOrder: sortedInfo.columnKey === 'name' ? sortedInfo.order : null,
