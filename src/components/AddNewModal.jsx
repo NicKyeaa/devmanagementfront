@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
-import './index.css';
 import { Button, Form, Input, Modal, Radio } from 'antd';
 
 
@@ -9,7 +8,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   return (
     <Modal
       visible={visible}
-      title="Create a new collection"
+      title="Create a new equipment"
       okText="Create"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -75,7 +74,7 @@ const AddNewModal = () => {
           setVisible(true);
         }}
       >
-        New Collection
+        New Equipment
       </Button>
       <CollectionCreateForm
         visible={visible}
