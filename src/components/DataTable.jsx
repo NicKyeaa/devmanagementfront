@@ -40,6 +40,7 @@ for (let i = 0; i < 10000; i++) {
         category: `PC ${i}`,
         type: 'CK',
         model: `London Park no. ${i}`,
+        inventoryNumber: `${i}`
     })
 };
 
@@ -119,6 +120,12 @@ const DataTable = () => {
       sortOrder: sortedInfo.columnKey === 'address' ? sortedInfo.order : null,
       ellipsis: true,
     },
+    {
+      title: 'Inventory Number',
+      dataIndex: 'inventoryNumber',
+      key: 'inventoryNumber',
+      ellipsis: true
+    }
   ];
   return (
     <>
