@@ -31,14 +31,15 @@ import AddNewModal from './AddNewModal';
 //   },
 // ];
 
+
 // Temporary for loop for data table
 const data = [];
 for (let i = 0; i < 10000; i++) {
     data.push({
         key: i.toString(),
-        name: `Edward ${i}`,
-        age: 33,
-        address: `London Park no. ${i}`,
+        category: `PC ${i}`,
+        type: 'CK',
+        model: `London Park no. ${i}`,
     })
 };
 
@@ -64,15 +65,15 @@ const DataTable = () => {
   const setAgeSort = () => {
     setSortedInfo({
       order: 'descend',
-      columnKey: 'age',
+      columnKey: 'type',
     });
   };
 
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: 'Category',
+      dataIndex: 'category',
+      key: 'category',
       filters: [
         {
           text: 'Joe',
@@ -83,25 +84,25 @@ const DataTable = () => {
           value: 'Jim',
         },
       ],
-      filteredValue: filteredInfo.name || null,
+      filteredValue: filteredInfo.category || null,
       filterSearch: true,
-      onFilter: (value, record) => record.name.includes(value),
-      sorter: (a, b) => a.name.length - b.name.length,
-      sortOrder: sortedInfo.columnKey === 'name' ? sortedInfo.order : null,
+      onFilter: (value, record) => record.category.includes(value),
+      sorter: (a, b) => a.category.length - b.category.length,
+      sortOrder: sortedInfo.columnKey === 'category' ? sortedInfo.order : null,
       ellipsis: true,
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      sorter: (a, b) => a.age - b.age,
-      sortOrder: sortedInfo.columnKey === 'age' ? sortedInfo.order : null,
+      title: 'Type',
+      dataIndex: 'type',
+      key: 'type',
+      sorter: (a, b) => a.type - b.type,
+      sortOrder: sortedInfo.columnKey === 'type' ? sortedInfo.order : null,
       ellipsis: true,
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Model',
+      dataIndex: 'model',
+      key: 'model',
       filters: [
         {
           text: 'London',
