@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import { Button, Form, Input, Modal, Radio } from 'antd';
-
+import { PlusSquareOutlined } from '@ant-design/icons'
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -70,11 +70,12 @@ const AddNewModal = () => {
     <div>
       <Button
         type="primary"
+        icon ={<PlusSquareOutlined />}
         onClick={() => {
           setVisible(true);
         }}
-      >
-        New Equipment
+          >
+        Add
       </Button>
       <CollectionCreateForm
         visible={visible}
