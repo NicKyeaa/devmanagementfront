@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.min.css';
 import '../index.css';
 import { Table, Button, Space } from 'antd';
+import AddNewModal from './AddNewModal';
+
 // const data = [
 //   {
 //     key: '1',
@@ -124,6 +126,7 @@ const DataTable = () => {
           marginBottom: 16,
         }}
       >
+        <AddNewModal />
         <Button onClick={setAgeSort}>Sort age</Button>
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>

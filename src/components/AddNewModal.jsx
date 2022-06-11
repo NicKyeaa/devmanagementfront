@@ -59,7 +59,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   );
 };
 
-const App = () => {
+const AddNewModal = () => {
   const [visible, setVisible] = useState(false);
 
   const onCreate = (values) => {
@@ -88,4 +88,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AddNewModal;
