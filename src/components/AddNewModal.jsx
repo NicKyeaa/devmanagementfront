@@ -33,12 +33,12 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         <Form.Item
-          name="title"
-          label="Title"
+          name="category"
+          label="Category"
           rules={[
             {
               required: true,
-              message: 'Please input the title of collection!',
+              message: 'Please input the category of the equipment!',
             },
           ]}
         >
