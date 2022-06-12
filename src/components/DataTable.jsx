@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.min.css';
-import '../index.css';
-import { Table, Button, Space } from 'antd';
 import AddNewModal from './AddNewModal';
-
+import 'antd/dist/antd.min.css';
+import { Table, Button, Space } from 'antd';
+import { PlusSquareOutlined } from '@ant-design/icons'
 
 // Temporary for loop for data table
 const data = [];
@@ -21,6 +20,15 @@ for (let i = 0; i < 10000; i++) {
 const DataTable = () => {
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
+  const [showAddNewModal, setShowAddNewModal] = useState(false);
+  
+  const handleAddNewModal = () => {
+    setShowAddNewModal(true);
+  };
+
+  const handleCancelAddNewModal = () => {
+    setShowAddNewModal(false);
+  };
 
   const handleChange = (pagination, filters, sorter) => {
     console.log('Various parameters', pagination, filters, sorter);
@@ -114,7 +122,15 @@ const DataTable = () => {
           marginBottom: 16,
         }}
       >
-        <AddNewModal />
+        <Button
+          type="primary"
+          icon={<PlusSquareOutlined />}
+          onClick={() => { handleAddNewModal(); }}
+          stlye={{ marginBottom: 16 }}
+        >
+          Add
+        </Button>
+        <AddNewModal modalState={showAddNewModal} closeModal={handleCancelAddNewModal} />
         <Button onClick={setAgeSort}>Sort age</Button>
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>

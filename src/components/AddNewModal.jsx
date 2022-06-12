@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import 'antd/dist/antd.min.css';
-import { Button, Form, Input, Modal, Radio } from 'antd';
-import { PlusSquareOutlined } from '@ant-design/icons'
+import { Form, Input, Modal, Radio } from 'antd';
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -58,25 +57,23 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   );
 };
 
-const AddNewModal = () => {
-  const [visible, setVisible] = useState(false);
-
+const AddNewModal = (props) => {
+    
+    const [visible, setVisible] = useState(false);
+  
+    useEffect(() => { 
+      if(props.modalState){
+        setVisible(true);
+        }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.modalState]);
+    
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
-    setVisible(false);
-  };
+    };
 
   return (
     <div>
-      <Button
-        type="primary"
-        icon ={<PlusSquareOutlined />}
-        onClick={() => {
-          setVisible(true);
-        }}
-          >
-        Add
-      </Button>
       <CollectionCreateForm
         visible={visible}
         onCreate={onCreate}
