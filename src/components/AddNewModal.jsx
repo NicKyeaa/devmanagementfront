@@ -1,6 +1,6 @@
-import React from 'react';
+import React   from 'react';
 import 'antd/dist/antd.min.css';
-import { Form, Input, Modal, Radio } from 'antd';
+import { Form, Input, Modal, Radio, Select } from 'antd';
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -41,7 +41,9 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             },
           ]}
         >
-          <Input />
+          <Select>
+            <Select.Option value="demo">Demo</Select.Option>
+          </Select>
         </Form.Item>
         <Form.Item name="description" label="Description">
           <Input type="textarea" />
