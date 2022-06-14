@@ -121,7 +121,9 @@ const DataTable = () => {
     },
     {
       title: 'Location',
-      data
+      dataIndex: 'location',
+      key: 'location',
+      ellipsis: true
     }
   ];
   return (
