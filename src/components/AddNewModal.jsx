@@ -1,7 +1,6 @@
 import React   from 'react';
 import 'antd/dist/antd.min.css';
-import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
-import { Form, Input, Modal, Radio, Select, Switch } from 'antd';
+import { Form, Input, Modal, Select, Switch } from 'antd';
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
