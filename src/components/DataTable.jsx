@@ -22,13 +22,15 @@ const DataTable = () => {
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
   
+  // Add new Modal 
   const handleAddNewModal = () => {
     setShowAddNewModal(true);
   };
 
-  const handleCancelAddNewModal = () => {
+  const handleCloseModal = () => {
     setShowAddNewModal(false);
   };
+  // Add new modal END
 
   const handleChange = (pagination, filters, sorter) => {
     console.log('Various parameters', pagination, filters, sorter);
@@ -125,12 +127,12 @@ const DataTable = () => {
         <Button
           type="primary"
           icon={<PlusSquareOutlined />}
-          onClick={() => { handleAddNewModal(); }}
+          onClick={handleAddNewModal}
           stlye={{ marginBottom: 16 }}
         >
           Add
         </Button>
-        <AddNewModal modalState={showAddNewModal} closeModal={handleCancelAddNewModal} />
+        <AddNewModal modalState={showAddNewModal} closeModal={handleCloseModal} />
         <Button onClick={setAgeSort}>Sort age</Button>
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>

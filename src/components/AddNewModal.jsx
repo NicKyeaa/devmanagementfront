@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import 'antd/dist/antd.min.css';
 import { Form, Input, Modal, Radio } from 'antd';
 
@@ -59,14 +59,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 
 const AddNewModal = (props) => {
     
-    const [visible, setVisible] = useState(false);
-  
-    useEffect(() => { 
-      if(props.modalState){
-        setVisible(true);
-        }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.modalState]);
+  // const [visible, setVisible] = useState(false);
     
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
@@ -75,11 +68,9 @@ const AddNewModal = (props) => {
   return (
     <div>
       <CollectionCreateForm
-        visible={visible}
+        visible={props.modalState}
         onCreate={onCreate}
-        onCancel={() => {
-          setVisible(false);
-        }}
+        onCancel={props.handleCloseModal}
       />
     </div>
   );
