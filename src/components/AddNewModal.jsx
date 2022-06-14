@@ -46,7 +46,9 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Select>
         </Form.Item>
         <Form.Item name="description" label="Description">
-          <Input type="textarea" />
+          <Select>
+            <Select.Option value="demo">Demo</Select.Option>
+          </Select>
         </Form.Item>
         <Form.Item name="modifier" className="collection-create-form_last-form-item">
           <Radio.Group>
