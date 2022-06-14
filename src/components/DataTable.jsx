@@ -6,14 +6,15 @@ import { PlusSquareOutlined } from '@ant-design/icons'
 
 // Temporary for loop for data table
 const data = [];
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 1000; i++) {
     data.push({
         key: i.toString(),
         category: `PC ${i}`,
         type: 'CK',
-        model: `London Park no. ${i}`,
+        model: 'HN',
         serialNumber: `SER ${i}`,
-        inventoryNumber: `INV ${i+100}`
+        inventoryNumber: `INV ${i+100}`,
+        location: `London Park no. ${i}`
     })
 };
 
@@ -117,6 +118,10 @@ const DataTable = () => {
       dataIndex: 'inventoryNumber',
       key: 'inventoryNumber',
       ellipsis: true
+    },
+    {
+      title: 'Location',
+      data
     }
   ];
   return (
