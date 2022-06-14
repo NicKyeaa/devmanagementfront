@@ -1,6 +1,7 @@
 import React   from 'react';
 import 'antd/dist/antd.min.css';
-import { Form, Input, Modal, Radio, Select } from 'antd';
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Form, Input, Modal, Radio, Select, Switch } from 'antd';
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -59,11 +60,12 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item name="modifier" className="collection-create-form_last-form-item">
-          <Radio.Group>
-            <Radio value="public">Public</Radio>
-            <Radio value="private">Private</Radio>
-          </Radio.Group>
+        <Form.Item>
+          <Switch
+            checkedChildren={'Active'}
+            unCheckedChildren={'Inactive'}
+            defaultChecked
+          />
         </Form.Item>
       </Form>
     </Modal>
