@@ -45,7 +45,16 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item name="description" label="Description">
+        <Form.Item
+          name="type"
+          label="Type"
+          rules={[
+            {
+              required: true,
+              message: 'Please input the type of the equipment'
+            }
+          ]}
+        >
           <Select>
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
