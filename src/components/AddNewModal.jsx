@@ -70,7 +70,7 @@ const AddNewModal = (props) => {
       <CollectionCreateForm
         visible={props.modalState}
         onCreate={onCreate}
-        onCancel={props.handleCloseModal}
+        onCancel={props.closeModal}
       />
     </div>
   );
