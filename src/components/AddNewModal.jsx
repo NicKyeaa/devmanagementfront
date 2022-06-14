@@ -37,7 +37,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           rules={[
             {
               required: true,
-              message: 'Please input the category of the equipment!',
+              message: 'Please select the category of the equipment!',
             },
           ]}
         >
@@ -51,13 +51,39 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           rules={[
             {
               required: true,
-              message: 'Please input the type of the equipment'
+              message: 'Please select the type of the equipment'
             }
           ]}
         >
           <Select>
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
+        </Form.Item>
+        <Form.Item
+          name="model"
+          label="Model"
+          rules={[
+            {
+              required: true,
+              message: 'Please select the model of the equipment'
+            }
+          ]}
+        >
+          <Select>
+            <Select.Option value="demo">Demo</Select.Option>
+          </Select>
+        </Form.Item>
+        <Form.Item
+          name="serialNumber"
+          label="Serial Number"
+          rules={[
+            {
+              required: true,
+              message: 'Please input the serial number of the equipment'
+            }
+          ]}
+        >
+          <Input />
         </Form.Item>
         <Form.Item>
           <Switch

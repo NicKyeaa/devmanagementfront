@@ -12,8 +12,8 @@ for (let i = 0; i < 10000; i++) {
         category: `PC ${i}`,
         type: 'CK',
         model: `London Park no. ${i}`,
-        inventoryNumber: `${i}`,
-        serialNumber: `${i}`
+        serialNumber: `SER ${i}`,
+        inventoryNumber: `INV ${i+100}`
     })
 };
 
@@ -107,15 +107,15 @@ const DataTable = () => {
       ellipsis: true,
     },
     {
-      title: 'Inventory Number',
-      dataIndex: 'inventoryNumber',
-      key: 'inventoryNumber',
-      ellipsis: true
-    },
-    {
       title: 'Serial Number',
       dataIndex: 'serialNumber',
       key: 'serialNumber',
+      ellipsis: true
+    },
+    {
+      title: 'Inventory Number',
+      dataIndex: 'inventoryNumber',
+      key: 'inventoryNumber',
       ellipsis: true
     }
   ];
