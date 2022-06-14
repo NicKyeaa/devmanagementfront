@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.min.css';
 import { Form, Input, Modal, Radio } from 'antd';
 
@@ -58,8 +58,6 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 };
 
 const AddNewModal = (props) => {
-    
-  // const [visible, setVisible] = useState(false);
     
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
