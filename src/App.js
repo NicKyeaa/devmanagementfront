@@ -1,11 +1,9 @@
 import './App.css';
-import DataTable from './components/Equipment/DataTable';
-import MainLayout from './components/Layout';
+import DataTable from './components/Equipment/DataTable'
 
 function App() {
   return (
     <div className="App">
-      <MainLayout />
       <DataTable />
     </div>
   );
