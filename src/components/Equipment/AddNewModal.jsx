@@ -112,6 +112,12 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         >
           <Input />
         </Form.Item>
+        <Form.Item
+          name="dateOfPurchase"
+          label="Date of Purchase"
+        >
+          <DatePicker />
+        </Form.Item>
         {/* Warranty of the equipment */}
         <Form.Item label="Warranty" name="warrantyDate">
           <RangePicker
