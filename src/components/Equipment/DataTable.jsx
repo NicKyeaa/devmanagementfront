@@ -20,7 +20,7 @@ for (let i = 0; i < 1000; i++) {
 
 const DataTable = () => {
 
-  // const [dataSource, setDataSource] = useState(data);
+  
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
@@ -146,7 +146,7 @@ const DataTable = () => {
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>
       </Space>
-      <Table columns={columns} dataSource={dataSource} scroll={{ y: 240 }} onChange={handleChange} />
+      <Table columns={columns} dataSource={data} scroll={{ y: 240 }} onChange={handleChange} />
     </>
   );
 };
