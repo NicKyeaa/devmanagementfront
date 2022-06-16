@@ -85,6 +85,12 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         >
           <Input />
         </Form.Item>
+        <Form.Item
+          name="inventoryNumber"
+          label="Inventory Number"
+        >
+          <Input />
+        </Form.Item>
         <Form.Item>
           <Switch
             checkedChildren={'Active'}
