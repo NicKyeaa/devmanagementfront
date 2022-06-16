@@ -1,6 +1,15 @@
 import React   from 'react';
 import 'antd/dist/antd.min.css';
-import { Form, Input, Modal, Select, Switch } from 'antd';
+import {
+  Form,
+  Input,
+  Modal,
+  Select,
+  Switch,
+  DatePicker
+} from 'antd';
+
+const { RangePicker } = DatePicker;
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -90,6 +99,17 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           label="Inventory Number"
         >
           <Input />
+        </Form.Item>
+        <Form.Item
+          name="location"
+          label="Location"
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item label="Warranty">
+          <RangePicker
+            format="DD-MM-YYYY"
+          />
         </Form.Item>
         <Form.Item>
           <Switch
