@@ -111,7 +111,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             format="DD-MM-YYYY"
           />
         </Form.Item>
-        <Form.Item>
+        <Form.Item label="Equipment Active">
           <Switch
             checkedChildren={'Active'}
             unCheckedChildren={'Inactive'}
