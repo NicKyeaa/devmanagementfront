@@ -20,7 +20,7 @@ for (let i = 0; i < 1000; i++) {
 
 const DataTable = () => {
 
-  const [dataSource, setDataSource] = useState(data);
+  // const [dataSource, setDataSource] = useState(data);
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
