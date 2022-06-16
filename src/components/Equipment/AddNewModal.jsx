@@ -135,6 +135,9 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             format="DD-MM-YYYY"
           />
         </Form.Item>
+        <Form.Item label="Remarks" name="remarks">
+          <Input.TextArea />
+        </Form.Item>
         {/* Status of the equipment */}
         <Form.Item label="Equipment Active" name="statusEquipment" valuePropName="checked">
           <Switch
