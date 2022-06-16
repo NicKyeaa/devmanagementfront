@@ -40,6 +40,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           modifier: 'public',
         }}
       >
+        {/* Category of the equipment */}
         <Form.Item
           name="category"
           label="Category"
@@ -53,6 +54,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           <Select>
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
+        {/* Type of the equipment */}
         </Form.Item>
         <Form.Item
           name="type"
@@ -68,6 +70,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
         </Form.Item>
+        {/* Model of the equipment */}
         <Form.Item
           name="model"
           label="Model"
@@ -82,6 +85,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
         </Form.Item>
+        {/* Serial number of the equipment */}
         <Form.Item
           name="serialNumber"
           label="Serial Number"
@@ -94,24 +98,28 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         >
           <Input />
         </Form.Item>
+        {/* Inventory Number of the equipment */}
         <Form.Item
           name="inventoryNumber"
           label="Inventory Number"
         >
           <Input />
         </Form.Item>
+        {/* Location of the equipment */}
         <Form.Item
           name="location"
           label="Location"
         >
           <Input />
         </Form.Item>
-        <Form.Item label="Warranty">
+        {/* Warranty of the equipment */}
+        <Form.Item label="Warranty" name="warrantyDate">
           <RangePicker
             format="DD-MM-YYYY"
           />
         </Form.Item>
-        <Form.Item label="Equipment Active">
+        {/* Status of the equipment */}
+        <Form.Item label="Equipment Active" name="statusEquipment" valuePropName="checked">
           <Switch
             checkedChildren={'Active'}
             unCheckedChildren={'Inactive'}
