@@ -6,10 +6,21 @@ import {
   Modal,
   Select,
   Switch,
-  DatePicker
+  DatePicker,
+  notification
 } from 'antd';
 
 const { RangePicker } = DatePicker;
+
+// Success notification when equipment is added
+const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: 'Equipment added successfully',
+      description:
+        'You have successfully added your equipment',
+    });
+};
+
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -141,6 +152,7 @@ const AddNewModal = (props) => {
     
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
+    openNotificationWithIcon('success');
     };
 
   return (
