@@ -1,6 +1,5 @@
 import React from 'react';
-import 'antd/dist/antd.css';
-import './index.css';
+import 'antd/dist/antd.min.css';
 import { Carousel } from 'antd';
 const contentStyle = {
   height: '160px',
