@@ -8,13 +8,17 @@ import { PlusSquareOutlined } from '@ant-design/icons'
 const data = [];
 for (let i = 0; i < 1000; i++) {
     data.push({
-        key: i.toString(),
-        category: `PC ${i}`,
-        type: 'CK',
-        model: 'HN',
-        serialNumber: `SER ${i}`,
-        inventoryNumber: `INV ${i+100}`,
-        location: `London Park no. ${i}`
+      key: i.toString(),
+      category: `PC ${i}`,
+      type: 'CK',
+      model: 'HN',
+      serialNumber: `SER ${i}`,
+      inventoryNumber: `INV ${i+100}`,
+      location: `London Park no. ${i}`,
+      dateOfPurchase: '2015',
+      warrantyDate: '2015-2021',
+      remarks: 'ipsem islur',
+      equipmentStatus: true
     })
 };
 
@@ -124,6 +128,18 @@ const DataTable = () => {
       dataIndex: 'location',
       key: 'location',
       ellipsis: true
+    },
+    {
+      title: 'Date of Purchase',
+      dataIndex: 'dateOfPurchase',
+      key: 'dateOfPurchase',
+      elipsis: true
+    },
+    {
+      title: 'Warranty',
+      dataIndex: 'warrantyDate',
+      key: 'warrantyDate',
+      elipsis: true
     }
   ];
   return (
