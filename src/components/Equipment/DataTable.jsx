@@ -162,7 +162,7 @@ const DataTable = () => {
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>
       </Space>
-      <Table columns={columns} dataSource={data} scroll={{ y: 400 }} onChange={handleChange} />
+      <Table columns={columns} dataSource={data} scroll={{ y: 470 }} onChange={handleChange} />
     </>
   );
 };
