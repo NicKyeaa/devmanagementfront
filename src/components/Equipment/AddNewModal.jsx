@@ -28,8 +28,10 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     <Modal
       visible={visible}
       title="Create a new equipment"
+      style={{
+        top: '2%',
+      }}
       width={1000}
-      style={{ top:20 }}
       okText="Create"
       cancelText="Cancel"
       onCancel={onCancel}
