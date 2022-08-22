@@ -142,19 +142,25 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         >
           <Input />
         </Form.Item>
-        {/* Date Of Purchase */}
-        <Form.Item
-          name="dateOfPurchase"
-          label="Date of Purchase"
-        >
-          <DatePicker />
-        </Form.Item>
-        {/* Warranty of the equipment */}
-        <Form.Item label="Warranty" name="warrantyDate">
-          <RangePicker
-            format="DD-MM-YYYY"
-          />
-        </Form.Item>
+        <Row gutter={12}>
+          {/* Date Of Purchase */}
+          <Col span={12}>
+            <Form.Item
+              name="dateOfPurchase"
+              label="Date of Purchase"
+            >
+              <DatePicker />
+            </Form.Item>
+          </Col>
+          {/* Warranty of the equipment */}
+          <Col span={12}>
+            <Form.Item label="Warranty" name="warrantyDate">
+              <RangePicker
+                format="DD-MM-YYYY"
+              />
+            </Form.Item>
+          </Col>
+        </Row>
         {/* Remarks */}
         <Form.Item label="Remarks" name="remarks">
           <Input.TextArea />
