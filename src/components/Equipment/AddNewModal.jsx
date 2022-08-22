@@ -10,7 +10,6 @@ import {
   notification,
   Space
 } from 'antd';
-import { WindowsFilled } from '@ant-design/icons';
 
 const { RangePicker } = DatePicker;
 
