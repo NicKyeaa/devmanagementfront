@@ -7,7 +7,8 @@ import {
   Select,
   Switch,
   DatePicker,
-  notification
+  notification,
+  Space
 } from 'antd';
 
 const { RangePicker } = DatePicker;
@@ -28,6 +29,8 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     <Modal
       visible={visible}
       title="Create a new equipment"
+      width={1000}
+      style={{ top:20 }}
       okText="Create"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -52,50 +55,52 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         {/* Category of the equipment */}
-        <Form.Item
-          name="category"
-          label="Category"
-          rules={[
-            {
-              required: true,
-              message: 'Please select the category of the equipment!',
-            },
-          ]}
-        >
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        {/* Type of the equipment */}
-        </Form.Item>
-        <Form.Item
-          name="type"
-          label="Type"
-          rules={[
-            {
-              required: true,
-              message: 'Please select the type of the equipment'
-            }
-          ]}
-        >
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        </Form.Item>
-        {/* Model of the equipment */}
-        <Form.Item
-          name="model"
-          label="Model"
-          rules={[
-            {
-              required: true,
-              message: 'Please select the model of the equipment'
-            }
-          ]}
-        >
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        </Form.Item>
+        <Space size="large" wrap>
+          <Form.Item
+            name="category"
+            label="Category"
+            rules={[
+              {
+                required: true,
+                message: 'Please select the category of the equipment!',
+              },
+            ]}
+          >
+            <Select>
+              <Select.Option value="demo">Demo</Select.Option>
+            </Select>
+          </Form.Item>
+          {/* Type of the equipment */}
+          <Form.Item
+            name="type"
+            label="Type"
+            rules={[
+              {
+                required: true,
+                message: 'Please select the type of the equipment'
+              }
+            ]}
+          >
+            <Select>
+              <Select.Option value="demo">Demo</Select.Option>
+            </Select>
+          </Form.Item>
+          {/* Model of the equipment */}
+          <Form.Item
+            name="model"
+            label="Model"
+            rules={[
+              {
+                required: true,
+                message: 'Please select the model of the equipment'
+              }
+            ]}
+          >
+            <Select>
+              <Select.Option value="demo">Demo</Select.Option>
+            </Select>
+          </Form.Item>
+        </Space>
         {/* Serial number of the equipment */}
         <Form.Item
           name="serialNumber"
