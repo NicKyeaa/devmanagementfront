@@ -58,52 +58,58 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         {/* Category of the equipment */}
-        <Space size="large">
-          <Form.Item
-            name="category"
-            label="Category"
-            rules={[
-              {
-                required: true,
-                message: 'Please select the category of the equipment!',
-              },
-            ]}
-          >
-            <Select>
-              <Select.Option value="demo">Demo</Select.Option>
-            </Select>
-          </Form.Item>
+        <Row>
+          <Col span={8}>
+            <Form.Item
+              name="category"
+              label="Category"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the category of the equipment!',
+                },
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+            </Col>
           {/* Type of the equipment */}
-          <Form.Item
-            name="type"
-            label="Type"
-            rules={[
-              {
-                required: true,
-                message: 'Please select the type of the equipment'
-              }
-            ]}
-          >
-            <Select>
-              <Select.Option value="demo">Demo</Select.Option>
-            </Select>
-          </Form.Item>
+          <Col span={8}>
+            <Form.Item
+              name="type"
+              label="Type"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the type of the equipment'
+                }
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+          </Col>
           {/* Model of the equipment */}
-          <Form.Item
-            name="model"
-            label="Model"
-            rules={[
-              {
-                required: true,
-                message: 'Please select the model of the equipment'
-              }
-            ]}
-          >
-            <Select>
-              <Select.Option value="demo">Demo</Select.Option>
-            </Select>
-          </Form.Item>
-        </Space>
+          <Col span={8}>
+            <Form.Item
+              name="model"
+              label="Model"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the model of the equipment'
+                }
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+          </Col>
+        </Row>
         {/* Serial number of the equipment */}
         <Form.Item
           name="serialNumber"
