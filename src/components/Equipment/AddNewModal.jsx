@@ -8,7 +8,6 @@ import {
   Switch,
   DatePicker,
   notification,
-  Space,
   Col,
   Row
 } from 'antd';
