@@ -8,7 +8,9 @@ import {
   Switch,
   DatePicker,
   notification,
-  Space
+  Space,
+  Col,
+  Row
 } from 'antd';
 
 const { RangePicker } = DatePicker;
