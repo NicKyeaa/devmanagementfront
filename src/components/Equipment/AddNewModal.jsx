@@ -57,7 +57,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         {/* Category of the equipment */}
-        <Row>
+        <Row gutter={8}>
           <Col span={8}>
             <Form.Item
               name="category"
@@ -110,25 +110,31 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Col>
         </Row>
         {/* Serial number of the equipment */}
-        <Form.Item
-          name="serialNumber"
-          label="Serial Number"
-          rules={[
-            {
-              required: true,
-              message: 'Please input the serial number of the equipment'
-            }
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        {/* Inventory Number of the equipment */}
-        <Form.Item
-          name="inventoryNumber"
-          label="Inventory Number"
-        >
-          <Input />
-        </Form.Item>
+        <Row>
+          <Col span={12}>
+            <Form.Item
+              name="serialNumber"
+              label="Serial Number"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input the serial number of the equipment'
+                }
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+          {/* Inventory Number of the equipment */}
+          <Col span={12}>
+            <Form.Item
+              name="inventoryNumber"
+              label="Inventory Number"
+            >
+              <Input />
+            </Form.Item>
+            </Col>
+        </Row>
         {/* Location of the equipment */}
         <Form.Item
           name="location"
