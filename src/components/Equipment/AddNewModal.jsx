@@ -1,4 +1,4 @@
-import React   from 'react';
+import React from 'react';
 import 'antd/dist/antd.min.css';
 import {
   Form,
@@ -10,6 +10,7 @@ import {
   notification,
   Space
 } from 'antd';
+import { WindowsFilled } from '@ant-design/icons';
 
 const { RangePicker } = DatePicker;
 
@@ -21,7 +22,6 @@ const openNotificationWithIcon = (type) => {
         'You have successfully added your equipment',
     });
 };
-
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
@@ -55,7 +55,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         {/* Category of the equipment */}
-        <Space size="large" wrap>
+        <Space size="large">
           <Form.Item
             name="category"
             label="Category"
@@ -157,7 +157,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 };
 
 const AddNewModal = (props) => {
-    
+
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
     openNotificationWithIcon('success');
