@@ -3,14 +3,13 @@ import 'antd/dist/antd.min.css';
 import {
   DesktopOutlined,
   FileOutlined,
-  PieChartOutlined,
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import DataTable from './Equipment/DataTable' 
     
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
   return {
@@ -22,8 +21,8 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Assets', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Assets', '1', <DesktopOutlined />),
+  getItem('Users', '2', <UserOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),
@@ -57,14 +56,6 @@ const App = () => {
             margin: '0 16px',
           }}
         >
-          <Breadcrumb
-            style={{
-              margin: '16px 0',
-            }}
-          >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
             <DataTable />      
         </Content>
         <Footer
