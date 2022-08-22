@@ -110,7 +110,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Col>
         </Row>
         {/* Serial number of the equipment */}
-        <Row>
+        <Row gutter={12}>
           <Col span={12}>
             <Form.Item
               name="serialNumber"
@@ -142,6 +142,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         >
           <Input />
         </Form.Item>
+        {/* Date Of Purchase */}
         <Form.Item
           name="dateOfPurchase"
           label="Date of Purchase"
@@ -154,6 +155,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             format="DD-MM-YYYY"
           />
         </Form.Item>
+        {/* Remarks */}
         <Form.Item label="Remarks" name="remarks">
           <Input.TextArea />
         </Form.Item>
