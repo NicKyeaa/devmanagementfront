@@ -9,7 +9,7 @@ import {
 import { Layout, Menu } from 'antd';
 import DataTable from './Equipment/DataTable' 
     
-const { Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider, Header } = Layout;
 
 function getItem(label, key, icon, children) {
   return {
@@ -40,6 +40,10 @@ const App = () => {
         minHeight: '100vh',
       }}
     >
+      {/* <Header className="header">
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items} />
+      </Header> */}
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
