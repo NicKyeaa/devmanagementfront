@@ -30,7 +30,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       visible={visible}
       title="Create a new equipment"
       style={{
-        top: '2%',
+        top: '1%',
       }}
       width={1000}
       okText="Create"
