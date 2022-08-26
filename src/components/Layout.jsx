@@ -9,7 +9,7 @@ import {
 import { Layout, Menu } from 'antd';
 import DataTable from './Equipment/DataTable' 
     
-const { Content, Footer, Sider, Header } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
   return {
