@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import AddNewModal from './AddNewModal';
 import 'antd/dist/antd.min.css';
@@ -30,6 +30,17 @@ const DataTable = () => {
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
   
+  // Fetching the data from the backend
+  useEffect(() => {
+    const fetchData = async () => { 
+      const result = await axios.get('http://localhost:3500/equipment');
+      setData(result);
+      console.log(data);
+    };
+    fetchData();
+   }, []);
+
+
   // Add new Modal 
   const handleAddNewModal = () => {
     setShowAddNewModal(true);
