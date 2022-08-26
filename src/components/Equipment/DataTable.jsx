@@ -33,7 +33,7 @@ const DataTable = () => {
   // Fetching the data from the backend
   useEffect(() => {
     const fetchData = async () => { 
-      const result = await axios.get('http://localhost:3500/equipment');
+      const result = await axios.get('/api/equipment/');
       setData(result);
       console.log(data);
     };
