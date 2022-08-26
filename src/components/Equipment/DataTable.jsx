@@ -34,8 +34,9 @@ const DataTable = () => {
   useEffect(() => {
     const fetchData = async () => { 
       const result = await axios.get('http://localhost:3500/equipment/');
-      setDataTemp(result);
+      setDataTemp(result.data);
       console.log(dataTemp);
+      console.log(data);
     };
     try {
       fetchData();
