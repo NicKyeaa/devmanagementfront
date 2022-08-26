@@ -6,26 +6,26 @@ import { Table, Button, Space } from 'antd';
 import { PlusSquareOutlined } from '@ant-design/icons'
 
 // Temporary for loop for data table
-// const data = [];
-// for (let i = 0; i < 1000; i++) {
-//     data.push({
-//       key: i.toString(),
-//       category: `PC ${i}`,
-//       type: 'CK',
-//       model: 'HN',
-//       serialNumber: `SER ${i}`,
-//       inventoryNumber: `INV ${i+100}`,
-//       location: `London Park no. ${i}`,
-//       dateOfPurchase: '2015',
-//       warrantyDate: '2015-2021',
-//       remarks: 'ipsem islur',
-//       equipmentStatus: true
-//     })
-// };
+const data = [];
+for (let i = 0; i < 1000; i++) {
+    data.push({
+      key: i.toString(),
+      category: `PC ${i}`,
+      type: 'CK',
+      model: 'HN',
+      serialNumber: `SER ${i}`,
+      inventoryNumber: `INV ${i+100}`,
+      location: `London Park no. ${i}`,
+      dateOfPurchase: '2015',
+      warrantyDate: '2015-2021',
+      remarks: 'ipsem islur',
+      equipmentStatus: true
+    })
+};
 
 const DataTable = () => {
 
-  const [data, setData] = useState([]);
+  const [dataTemp, setDataTemp] = useState('default');
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
@@ -33,11 +33,16 @@ const DataTable = () => {
   // Fetching the data from the backend
   useEffect(() => {
     const fetchData = async () => { 
-      const result = await axios.get('/api/equipment/');
-      setData(result);
-      console.log(data);
+      const result = await axios.get('http://localhost:3500/equipment/');
+      setDataTemp(result);
+      console.log(dataTemp);
     };
-    fetchData();
+    try {
+      fetchData();
+    } catch (e) {
+      console.log(e)
+    }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
 
