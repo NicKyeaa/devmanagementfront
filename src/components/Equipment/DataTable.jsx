@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
+import axios from "axios"
 import AddNewModal from './AddNewModal';
 import 'antd/dist/antd.min.css';
 import { Table, Button, Space } from 'antd';
 import { PlusSquareOutlined } from '@ant-design/icons'
 
 // Temporary for loop for data table
-const data = [];
-for (let i = 0; i < 1000; i++) {
-    data.push({
-      key: i.toString(),
-      category: `PC ${i}`,
-      type: 'CK',
-      model: 'HN',
-      serialNumber: `SER ${i}`,
-      inventoryNumber: `INV ${i+100}`,
-      location: `London Park no. ${i}`,
-      dateOfPurchase: '2015',
-      warrantyDate: '2015-2021',
-      remarks: 'ipsem islur',
-      equipmentStatus: true
-    })
-};
+// const data = [];
+// for (let i = 0; i < 1000; i++) {
+//     data.push({
+//       key: i.toString(),
+//       category: `PC ${i}`,
+//       type: 'CK',
+//       model: 'HN',
+//       serialNumber: `SER ${i}`,
+//       inventoryNumber: `INV ${i+100}`,
+//       location: `London Park no. ${i}`,
+//       dateOfPurchase: '2015',
+//       warrantyDate: '2015-2021',
+//       remarks: 'ipsem islur',
+//       equipmentStatus: true
+//     })
+// };
 
 const DataTable = () => {
 
-  
+  const [data, setData] = useState([]);
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
