@@ -6,26 +6,26 @@ import { Table, Button, Space } from 'antd';
 import { PlusSquareOutlined } from '@ant-design/icons'
 
 // Temporary for loop for data table
-const data = [];
-for (let i = 0; i < 1000; i++) {
-    data.push({
-      key: i.toString(),
-      category: `PC ${i}`,
-      type: 'CK',
-      model: 'HN',
-      serialNumber: `SER ${i}`,
-      inventoryNumber: `INV ${i+100}`,
-      location: `London Park no. ${i}`,
-      dateOfPurchase: '2015',
-      warrantyDate: '2015-2021',
-      remarks: 'ipsem islur',
-      equipmentStatus: true
-    })
-};
+// const data = [];
+// for (let i = 0; i < 1000; i++) {
+//     data.push({
+//       key: i.toString(),
+//       category: `PC ${i}`,
+//       type: 'CK',
+//       model: 'HN',
+//       serialNumber: `SER ${i}`,
+//       inventoryNumber: `INV ${i+100}`,
+//       location: `London Park no. ${i}`,
+//       dateOfPurchase: '2015',
+//       warrantyDate: '2015-2021',
+//       remarks: 'ipsem islur',
+//       equipmentStatus: true
+//     })
+// };
 
 const DataTable = () => {
 
-  const [dataTemp, setDataTemp] = useState('default');
+  const [dataTable, setDataTable] = useState([]);
   const [filteredInfo, setFilteredInfo] = useState({});
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
@@ -34,9 +34,10 @@ const DataTable = () => {
   useEffect(() => {
     const fetchData = async () => { 
       const result = await axios.get('http://localhost:3500/equipment/');
-      setDataTemp(result.data);
-      console.log(dataTemp);
-      console.log(data);
+      result.data.forEach(el => { 
+        el.key = el._id
+      });
+      setDataTable(result.data);
     };
     try {
       fetchData();
@@ -180,7 +181,7 @@ const DataTable = () => {
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>
       </Space>
-      <Table columns={columns} dataSource={data} scroll={{ y: 470 }} onChange={handleChange} />
+      <Table columns={columns} dataSource={dataTable} scroll={{ y: 470 }} onChange={handleChange} />
     </>
   );
 };
