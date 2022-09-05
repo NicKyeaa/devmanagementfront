@@ -11,6 +11,7 @@ import {
   Col,
   Row
 } from 'antd';
+import axios from 'axios';
 
 const { RangePicker } = DatePicker;
 
@@ -180,10 +181,15 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 
 const AddNewModal = (props) => {
 
-  const onCreate = (values) => {
+  const onCreate = async (values) => {
     console.log('Received values of form: ', values);
-    openNotificationWithIcon('success');
-    };
+    try {
+      await axios.post('http://localhost:3500/equipment/', values);
+      openNotificationWithIcon('success');
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <div>
