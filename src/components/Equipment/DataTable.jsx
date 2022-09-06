@@ -56,6 +56,18 @@ const DataTable = () => {
     setShowAddNewModal(false);
   };
   // Add new modal END
+  
+  // When new equipment is created. This functions is passed down to modal as prop
+  const onCreate = async (values) => {
+    console.log('Received values of form: ', values);
+    try {
+      await axios.post('http://localhost:3500/equipment/', values);
+      // openNotificationWithIcon('success');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
 
   const handleChange = (pagination, filters, sorter) => {
     console.log('Various parameters', pagination, filters, sorter);
@@ -175,7 +187,7 @@ const DataTable = () => {
         >
           Add
         </Button>
-        <AddNewModal modalState={showAddNewModal} closeModal={handleCloseModal} />
+        <AddNewModal modalState={showAddNewModal} closeModal={handleCloseModal} onCreate={onCreate}/>
         <Button onClick={setAgeSort}>Sort age</Button>
         <Button onClick={clearFilters}>Clear filters</Button>
         <Button onClick={clearAll}>Clear filters and sorters</Button>

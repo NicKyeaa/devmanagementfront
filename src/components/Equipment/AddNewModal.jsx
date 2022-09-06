@@ -181,21 +181,11 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 
 const AddNewModal = (props) => {
 
-  const onCreate = async (values) => {
-    console.log('Received values of form: ', values);
-    try {
-      await axios.post('http://localhost:3500/equipment/', values);
-      openNotificationWithIcon('success');
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   return (
     <div>
       <CollectionCreateForm
         visible={props.modalState}
-        onCreate={onCreate}
+        onCreate={props.onCreate}
         onCancel={props.closeModal}
       />
     </div>
