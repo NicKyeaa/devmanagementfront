@@ -30,15 +30,18 @@ const DataTable = () => {
   const [sortedInfo, setSortedInfo] = useState({});
   const [showAddNewModal, setShowAddNewModal] = useState(false);
   
+  // Fetch data function
+  const fetchData = async () => { 
+    const result = await axios.get('http://localhost:3500/equipment/');
+    result.data.forEach(el => { 
+      el.key = el._id
+    });
+    setDataTable(result.data);
+  };
+
+
   // Fetching the data from the backend
   useEffect(() => {
-    const fetchData = async () => { 
-      const result = await axios.get('http://localhost:3500/equipment/');
-      result.data.forEach(el => { 
-        el.key = el._id
-      });
-      setDataTable(result.data);
-    };
     try {
       fetchData();
     } catch (e) {
@@ -61,7 +64,9 @@ const DataTable = () => {
   const onCreate = async (values) => {
     console.log('Received values of form: ', values);
     try {
+      // Post the data to DB and then fetch the new data from database
       await axios.post('http://localhost:3500/equipment/', values);
+      fetchData();
       // openNotificationWithIcon('success');
     } catch (e) {
       console.log(e);
