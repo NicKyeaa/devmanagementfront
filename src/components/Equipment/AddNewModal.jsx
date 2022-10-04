@@ -7,11 +7,9 @@ import {
   Select,
   Switch,
   DatePicker,
-  notification,
   Col,
   Row
 } from 'antd';
-import axios from 'axios';
 
 const { RangePicker } = DatePicker;
 

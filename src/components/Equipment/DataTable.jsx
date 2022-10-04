@@ -2,26 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import AddNewModal from './AddNewModal';
 import 'antd/dist/antd.min.css';
-import { Table, Button, Space } from 'antd';
+import { Table, Button, Space, notification } from 'antd';
 import { PlusSquareOutlined } from '@ant-design/icons'
 
-// Temporary for loop for data table
-// const data = [];
-// for (let i = 0; i < 1000; i++) {
-//     data.push({
-//       key: i.toString(),
-//       category: `PC ${i}`,
-//       type: 'CK',
-//       model: 'HN',
-//       serialNumber: `SER ${i}`,
-//       inventoryNumber: `INV ${i+100}`,
-//       location: `London Park no. ${i}`,
-//       dateOfPurchase: '2015',
-//       warrantyDate: '2015-2021',
-//       remarks: 'ipsem islur',
-//       equipmentStatus: true
-//     })
-// };
+// Success notification when equipment is added
+const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: 'Equipment added successfully',
+      description:
+        'You have successfully added your equipment',
+    });
+};
 
 const DataTable = () => {
 
@@ -67,7 +58,7 @@ const DataTable = () => {
       // Post the data to DB and then fetch the new data from database
       await axios.post('http://localhost:3500/equipment/', values);
       fetchData();
-      // openNotificationWithIcon('success');
+      openNotificationWithIcon('success');
     } catch (e) {
       console.log(e);
     }
