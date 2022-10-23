@@ -60,7 +60,7 @@ const App = () => {
             margin: '0 16px',
           }}
         >
-            <DataTable />      
+          <DataTable />      
         </Content>
         <Footer
           style={{

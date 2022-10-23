@@ -60,7 +60,7 @@ const DataTable = () => {
       fetchData();
       openNotificationWithIcon('success');
     } catch (e) {
-      console.log(e);
+      openNotificationWithIcon('error');
     }
   };
 
