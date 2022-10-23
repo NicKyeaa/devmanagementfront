@@ -13,15 +13,6 @@ import {
 
 const { RangePicker } = DatePicker;
 
-// // Success notification when equipment is added
-// const openNotificationWithIcon = (type) => {
-//     notification[type]({
-//       message: 'Equipment added successfully',
-//       description:
-//         'You have successfully added your equipment',
-//     });
-// };
-
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
   return (
