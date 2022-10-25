@@ -13,11 +13,11 @@ import {
 
 const { RangePicker } = DatePicker;
 
-const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
   const [form] = Form.useForm();
   return (
     <Modal
-      visible={visible}
+      open={open}
       title="Create a new equipment"
       style={{
         top: '1%',
@@ -173,7 +173,7 @@ const AddNewModal = (props) => {
   return (
     <div>
       <CollectionCreateForm
-        visible={props.modalState}
+        open={props.modalState}
         onCreate={props.onCreate}
         onCancel={props.closeModal}
       />
