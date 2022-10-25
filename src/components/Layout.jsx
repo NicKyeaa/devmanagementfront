@@ -7,7 +7,8 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
-import DataTable from './Equipment/DataTable' 
+import DataTable from './Equipment/DataTable'
+import EquipmentTab from './Equipment/EquipmentTab' 
     
 const { Content, Footer, Sider } = Layout;
 
@@ -60,7 +61,8 @@ const App = () => {
             margin: '0 16px',
           }}
         >
-          <DataTable />      
+          {/* <DataTable />       */}
+          <EquipmentTab />
         </Content>
         <Footer
           style={{

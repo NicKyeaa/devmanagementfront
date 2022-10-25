@@ -1,7 +1,16 @@
 import React from 'react'
+import { Col, Row } from 'antd'
+import DataTable from './DataTable'
 
-export default function EquipmentTab() {
-  return (
-    <div>EquipmentTab</div>
-  )
-}
+const EquipmentTab = () => {
+    
+    return (
+        <div>
+            <Col span={24}>
+                <DataTable />
+            </Col>
+        </div>
+    );
+};
+
+export default EquipmentTab;
