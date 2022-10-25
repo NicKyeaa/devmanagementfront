@@ -2,6 +2,7 @@ import React from 'react'
 import 'antd/dist/antd.min.css';
 import { Col, Row } from 'antd'
 import DataTable from './DataTable'
+import EquipmentEditCard from './EquipmentEditCard'
 
 const EquipmentTab = () => {
     
@@ -14,10 +15,10 @@ const EquipmentTab = () => {
 			</Row>
 			<Row justify="space-between">
 				<Col span={11}>
-					Test
+					Test1
 				</Col>
 				<Col span={11}>
-					Test 2
+					<EquipmentEditCard />
 				</Col>
 			</Row>
         </>

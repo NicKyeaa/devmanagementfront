@@ -2,15 +2,15 @@ import React from 'react'
 import 'antd/dist/antd.min.css';
 import {
     Card
-} from 'ant';
+} from 'antd';
 
-export const EquipmentEditCard = () => { 
+const EquipmentEditCard = () => { 
     <>
         <Card
             title="Edit Equipment"
             style={{
-                width: '100%',
-                height: '100%'
+                width: '10%',
+                height: '10%'
             }}
         >
             <p>Test1</p>
@@ -19,3 +19,5 @@ export const EquipmentEditCard = () => {
         </Card>
     </>
 };
+
+export default EquipmentEditCard;
