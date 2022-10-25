@@ -6,9 +6,19 @@ const EquipmentTab = () => {
     
     return (
         <>
-            <Col span={24}>
-                <DataTable />
-            </Col>
+            <Row>
+                <Col span={24}>
+                    <DataTable />
+                </Col>
+			</Row>
+			<Row justify="space-between">
+				<Col span={11}>
+					Test
+				</Col>
+				<Col span={11}>
+					Test 2
+				</Col>
+			</Row>
         </>
     );
 };
