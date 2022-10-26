@@ -23,11 +23,12 @@ const EquipmentEditCard = () => {
                     height: '100%',
                 }}
                 extra={
-                    <Tooltip title="Edit the selected equipment" color="blue" key="equipmentEditButton">
+                    <Tooltip title="Edit the selected equipment" color="cyan" key="equipmentEditButton">
                         <Button
                             type="primary"
                             icon={<EditFilled />}
                             shape="round"
+                            onClick={onFormLayoutChange}
                         >
                             Edit
                         </Button>
