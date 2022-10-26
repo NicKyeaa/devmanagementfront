@@ -4,12 +4,12 @@ import {
     Card
 } from 'antd';
 
-const EquipmentEditCard = () => { 
+const EquipmentLifeCylcleCard = () => { 
 
     return (
         <>
             <Card
-                title="Edit Equipment"
+                title="Lifecycle"
                 style={{
                     width: '100%',
                     height: '100%',
@@ -23,4 +23,4 @@ const EquipmentEditCard = () => {
     );
 };
 
-export default EquipmentEditCard;
+export default EquipmentLifeCylcleCard;
