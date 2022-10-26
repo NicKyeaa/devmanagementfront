@@ -3,6 +3,7 @@ import 'antd/dist/antd.min.css';
 import { Col, Row } from 'antd'
 import DataTable from './DataTable'
 import EquipmentEditCard from './EquipmentEditCard'
+import EquipmentLifeCylcleCard from './EquipmentLifeCylcleCard'
 
 const EquipmentTab = () => {
     
@@ -18,7 +19,7 @@ const EquipmentTab = () => {
 					<EquipmentEditCard />
 				</Col>
 				<Col span={11}>
-					Test2
+					<EquipmentLifeCylcleCard />
 				</Col>
 			</Row>
         </>

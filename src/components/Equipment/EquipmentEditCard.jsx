@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import 'antd/dist/antd.min.css';
 import {
-    Card
+    Card,
+    Button
 } from 'antd';
+import { EditFilled } from '@ant-design/icons'
 
-const EquipmentEditCard = () => { 
+const EquipmentEditCard = () => {
+    
+    const [formDisabled, setFormDisabled] = useState(true);
+    const onFormLayoutChange = ({ disabled }) => { 
+        setFormDisabled(disabled);
+    };
 
     return (
         <>
@@ -14,9 +21,16 @@ const EquipmentEditCard = () => {
                     width: '100%',
                     height: '100%',
                 }}
+                extra={
+                    <Button
+                        type="primary"
+                        icon={<EditFilled />}
+                        shape="round"
+                    >
+                        Edit
+                    </Button>
+                }
             >
-                <p>Test</p>
-                <p>Test</p>
             </Card>
             
         </>

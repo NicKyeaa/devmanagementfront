@@ -1,7 +1,8 @@
 import React from 'react'
 import 'antd/dist/antd.min.css';
 import {
-    Card
+    Card,
+    Button
 } from 'antd';
 
 const EquipmentLifeCylcleCard = () => { 
@@ -15,8 +16,6 @@ const EquipmentLifeCylcleCard = () => {
                     height: '100%',
                 }}
             >
-                <p>Test</p>
-                <p>Test</p>
             </Card>
             
         </>
