@@ -5,19 +5,23 @@ import {
 } from 'antd';
 
 const EquipmentEditCard = () => { 
-    <>
-        <Card
-            title="Edit Equipment"
-            style={{
-                width: '10%',
-                height: '10%'
-            }}
-        >
-            <p>Test1</p>
-            <p>Test2</p>
-            <p>Test3</p>
-        </Card>
-    </>
+
+    return (
+        <>
+            <Card
+                title="Edit Equipment"
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    marginBottom:'1%'
+                }}
+            >
+                <p>Test</p>
+                <p>Test</p>
+            </Card>
+            
+        </>
+    );
 };
 
 export default EquipmentEditCard;

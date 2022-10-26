@@ -15,10 +15,10 @@ const EquipmentTab = () => {
 			</Row>
 			<Row justify="space-between">
 				<Col span={11}>
-					Test1
+					<EquipmentEditCard />
 				</Col>
 				<Col span={11}>
-					<EquipmentEditCard />
+					Test2
 				</Col>
 			</Row>
         </>
