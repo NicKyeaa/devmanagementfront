@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import 'antd/dist/antd.min.css';
 import {
     Card,
-    Button
+    Button,
+    Tooltip
 } from 'antd';
 import { EditFilled } from '@ant-design/icons'
 
@@ -22,13 +23,15 @@ const EquipmentEditCard = () => {
                     height: '100%',
                 }}
                 extra={
-                    <Button
-                        type="primary"
-                        icon={<EditFilled />}
-                        shape="round"
-                    >
-                        Edit
-                    </Button>
+                    <Tooltip title="Edit the selected equipment" color="blue">
+                        <Button
+                            type="primary"
+                            icon={<EditFilled />}
+                            shape="round"
+                        >
+                            Edit
+                        </Button>
+                    </Tooltip>
                 }
             >
             </Card>
