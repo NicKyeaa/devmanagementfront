@@ -6,6 +6,7 @@ import {
     Tooltip
 } from 'antd';
 import { EditFilled } from '@ant-design/icons'
+import EquipmentEditForm from './EquipmentEditForm';
 
 const EquipmentEditCard = () => {
     
@@ -35,8 +36,8 @@ const EquipmentEditCard = () => {
                     </Tooltip>
                 }
             >
+                <EquipmentEditForm />
             </Card>
-            
         </>
     );
 };
