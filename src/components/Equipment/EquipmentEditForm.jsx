@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
 import {
-  Form,
-  Input,
-  Button,
-  Radio,
-  Select,
-  Cascader,
-  DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
-  Checkbox,
-  Upload,
+    Form,
+    Input,
+    Select,
+    Switch,
+    DatePicker,
+    Row,
+    Col
 } from 'antd';
 
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 
 const EquipmentEditForm = ({disabled}) => {
-
-  const [componentDisabled, setComponentDisabled] = useState(true);
   
   const onFormLayoutChange = ({ disabled }) => {
     //....
@@ -28,105 +20,130 @@ const EquipmentEditForm = ({disabled}) => {
     
   return (
     <>
-      <Checkbox
-        checked={componentDisabled}
-        onChange={(e) => setComponentDisabled(e.target.checked)}
-      >
-        Form disabled
-      </Checkbox>
       <Form
-        labelCol={{
-          span: 4,
-        }}
-        wrapperCol={{
-          span: 14,
-        }}
-        layout="horizontal"
+        layout="vertical"
         onValuesChange={onFormLayoutChange}
         disabled={disabled}
-      >
-        <Form.Item label="Checkbox" name="disabled" valuePropName="checked">
-          <Checkbox>Checkbox</Checkbox>
-        </Form.Item>
-        <Form.Item label="Radio">
-          <Radio.Group>
-            <Radio value="apple"> Apple </Radio>
-            <Radio value="pear"> Pear </Radio>
-          </Radio.Group>
-        </Form.Item>
-        <Form.Item label="Input">
+          >
+              {/* Category of the equipment */}
+        <Row gutter={8}>
+          <Col span={8}>
+            <Form.Item
+              name="category"
+              label="Category"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the category of the equipment!',
+                },
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+            </Col>
+          {/* Type of the equipment */}
+          <Col span={8}>
+            <Form.Item
+              name="type"
+              label="Type"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the type of the equipment'
+                }
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+          </Col>
+          {/* Model of the equipment */}
+          <Col span={8}>
+            <Form.Item
+              name="model"
+              label="Model"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please select the model of the equipment'
+                }
+              ]}
+            >
+              <Select>
+                <Select.Option value="demo">Demo</Select.Option>
+              </Select>
+              </Form.Item>
+          </Col>
+        </Row>
+        {/* Serial number of the equipment */}
+        <Row gutter={12}>
+          <Col span={12}>
+            <Form.Item
+              name="serialNumber"
+              label="Serial Number"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input the serial number of the equipment'
+                }
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+          {/* Inventory Number of the equipment */}
+          <Col span={12}>
+            <Form.Item
+              name="inventoryNumber"
+              label="Inventory Number"
+            >
+              <Input />
+            </Form.Item>
+            </Col>
+        </Row>
+        {/* Location of the equipment */}
+        <Form.Item
+          name="location"
+          label="Location"
+        >
           <Input />
         </Form.Item>
-        <Form.Item label="Select">
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
+        <Row gutter={12}>
+          {/* Date Of Purchase */}
+          <Col span={12}>
+            <Form.Item
+              name="dateOfPurchase"
+              label="Date of Purchase"
+            >
+              <DatePicker />
+            </Form.Item>
+          </Col>
+          {/* Warranty of the equipment */}
+          <Col span={12}>
+            <Form.Item label="Warranty" name="warrantyDate">
+              <RangePicker
+                format="DD-MM-YYYY"
+              />
+            </Form.Item>
+          </Col>
+        </Row>
+        {/* Remarks */}
+        <Form.Item label="Remarks" name="remarks">
+          <Input.TextArea />
         </Form.Item>
-        <Form.Item label="TreeSelect">
-          <TreeSelect
-            treeData={[
-              {
-                title: 'Light',
-                value: 'light',
-                children: [
-                  {
-                    title: 'Bamboo',
-                    value: 'bamboo',
-                  },
-                ],
-              },
-            ]}
+        {/* Status of the equipment */}
+        <Form.Item label="Equipment Active" name="statusEquipment" valuePropName="checked">
+          <Switch
+            checkedChildren={'Active'}
+            unCheckedChildren={'Inactive'}
+            defaultChecked
           />
-        </Form.Item>
-        <Form.Item label="Cascader">
-          <Cascader
-            options={[
-              {
-                value: 'zhejiang',
-                label: 'Zhejiang',
-                children: [
-                  {
-                    value: 'hangzhou',
-                    label: 'Hangzhou',
-                  },
-                ],
-              },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="DatePicker">
-          <DatePicker />
-        </Form.Item>
-        <Form.Item label="RangePicker">
-          <RangePicker />
-        </Form.Item>
-        <Form.Item label="InputNumber">
-          <InputNumber />
-        </Form.Item>
-        <Form.Item label="TextArea">
-          <TextArea rows={4} />
-        </Form.Item>
-        <Form.Item label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-        <Form.Item label="Upload" valuePropName="fileList">
-          <Upload action="/upload.do" listType="picture-card">
-            <div>
-              <PlusOutlined />
-              <div
-                style={{
-                  marginTop: 8,
-                }}
-              >
-                Upload
-              </div>
-            </div>
-          </Upload>
-        </Form.Item>
-        <Form.Item label="Button">
-          <Button>Button</Button>
         </Form.Item>
       </Form>
+      
     </>
   );
 };
