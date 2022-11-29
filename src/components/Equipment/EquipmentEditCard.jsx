@@ -9,10 +9,11 @@ import { EditFilled } from '@ant-design/icons'
 import EquipmentEditForm from './EquipmentEditForm';
 
 const EquipmentEditCard = () => {
-    
-    const [formDisabled, setFormDisabled] = useState(true);
-    const onFormLayoutChange = ({ disabled }) => { 
-        setFormDisabled(disabled);
+
+    const [componentDisabled, setComponentDisabled] = useState(true);
+
+    const formChange = () => { 
+        setComponentDisabled(componentDisabled => !componentDisabled);
     };
 
     return (
@@ -29,14 +30,14 @@ const EquipmentEditCard = () => {
                             type="primary"
                             icon={<EditFilled />}
                             shape="round"
-                            onClick={onFormLayoutChange}
+                            onClick={formChange}
                         >
                             Edit
                         </Button>
                     </Tooltip>
                 }
             >
-                <EquipmentEditForm />
+                <EquipmentEditForm disabled={componentDisabled} />
             </Card>
         </>
     );

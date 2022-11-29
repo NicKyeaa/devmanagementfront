@@ -14,13 +14,18 @@ import {
   Checkbox,
   Upload,
 } from 'antd';
+
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
-const FormDisabledDemo = () => {
+
+const EquipmentEditForm = ({disabled}) => {
+
   const [componentDisabled, setComponentDisabled] = useState(true);
+  
   const onFormLayoutChange = ({ disabled }) => {
-    setComponentDisabled(disabled);
-  };
+    //....
+    };
+    
   return (
     <>
       <Checkbox
@@ -38,7 +43,7 @@ const FormDisabledDemo = () => {
         }}
         layout="horizontal"
         onValuesChange={onFormLayoutChange}
-        disabled={componentDisabled}
+        disabled={disabled}
       >
         <Form.Item label="Checkbox" name="disabled" valuePropName="checked">
           <Checkbox>Checkbox</Checkbox>
@@ -125,4 +130,4 @@ const FormDisabledDemo = () => {
     </>
   );
 };
-export default () => <FormDisabledDemo />;
+export default EquipmentEditForm;
