@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import AddNewModal from './AddNewModal';
-import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.min.css';
 import { Table, Button, Space, notification } from 'antd';
 import { PlusSquareOutlined } from '@ant-design/icons'
 
